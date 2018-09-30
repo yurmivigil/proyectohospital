@@ -1,0 +1,5 @@
+package sv.com.jvides.models.dao;
+
+public interface IInvoiceDao {
+
+}

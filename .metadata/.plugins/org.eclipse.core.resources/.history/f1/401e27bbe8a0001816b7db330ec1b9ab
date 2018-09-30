@@ -1,0 +1,11 @@
+/* Populate tables */
+INSERT INTO customers (id,first_name, last_name, email, create_at) VALUES(1,'Andres', 'Guzman', 'profesor@bolsadeideas.com', '2017-08-01');
+INSERT INTO customers (id,first_name, last_name, email, create_at) VALUES(2,'John', 'Doe', 'john.doe@gmail.com', '2017-08-02');
+INSERT INTO customers (id,first_name, last_name, email, create_at) VALUES(3,'Linus', 'Torvalds', 'linus.torvalds@gmail.com', '2017-08-03');
+INSERT INTO customers (id,first_name, last_name, email, create_at) VALUES(4,'Jane', 'Doe', 'jane.doe@gmail.com', '2017-08-04');
+INSERT INTO customers (id,first_name, last_name, email, create_at) VALUES(5,'Rasmus', 'Lerdorf', 'rasmus.lerdorf@gmail.com', '2017-08-05');
+INSERT INTO customers (id,first_name, last_name, email, create_at) VALUES(6,'Erich', 'Gamma', 'erich.gamma@gmail.com', '2017-08-06');
+INSERT INTO customers (id,first_name, last_name, email, create_at) VALUES(7,'Richard', 'Helm', 'richard.helm@gmail.com', '2017-08-07');
+
+/* Populate tabla productos */
+INSERT INTO products (id,name, price, create_at) VALUES(1,'Panasonic Pantalla LCD', 259990, TO_CHAR(CURRENT_DATE, 'YYYY-MM-DD'));

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<title th:text="${titulo}">Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+<link rel="stylesheet" th:href="@{/css/animate.css}" />
+<link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap-datepicker.css}" />
+<link rel="stylesheet" th:href="@{/css/jquery.timepicker.css}" />
+<link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    
+      <header role="banner">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-5">
+                <ul class="social list-unstyled">
+                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="/l">Asistente Hospitalario<span></span>  </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+<div class="collapse navbar-collapse" id="navbarsExample05">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/">Inicio</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="pacientes">Paciente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="doctores">Personal</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="area">Area</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="Medicamento">Farmacia</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="Recetas">Recetas</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END header -->
+      
+      
+<div class="jumbotron text-center">
+  <h1>Asistente hospitalario</h1> 
+  <p>Tu mejor opcion</p> 
+</div>
+<div class="container">
+<form th:action="@{/formArea}" th:object="${area}" method="post" >
+	<div class="form-group">
+    	<label for="firstName">Area</label>
+    	<input type="text" class="form-control" id="NOM_AREA" placeholder="Nombre" th:field="*{NOM_AREA}"/>
+    	<small th:if="${#fields.hasErrors('NOM_AREA')}" th:errors="*{NOM_AREA}" class="form-text text-danger"></small>
+  	</div>
+  	<div class="form-group">
+    	<label for="ESTADOt">DESCRIPCION</label>
+    	<input type="text" class="form-control" id="DES_AREA" placeholder="DESCRIPCION" th:field="*{DES_AREA}"/>
+    	<small th:if="${#fields.hasErrors('DES_AREA')}" th:errors="*{DES_AREA}" class="form-text text-danger"></small>
+  	</div>
+  	
+  	<div class="form-group">
+    	<label for="createAt">ESTADO</label>
+    	<input type="text" class="form-control" id="ESTADO	" placeholder="ESTADO" th:field="*{ESTADO}"/>
+    	<small th:if="${#fields.hasErrors('ESTADO')}" th:errors="*{ESTADO}" class="form-text text-danger"></small>
+  	</div>
+  	
+  	
+  	<input type="submit" value="Crear cliente" />
+	<input type="hidden" id="id" th:field="*{id}">
+</form>
+</div>
+</body>
+</html>

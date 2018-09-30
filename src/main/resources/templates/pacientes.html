@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+<link rel="stylesheet" th:href="@{/css/animate.css}" />
+<link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap-datepicker.css}" />
+<link rel="stylesheet" th:href="@{/css/jquery.timepicker.css}" />
+<link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+      <header role="banner">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-5">
+                <ul class="social list-unstyled">
+                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="/">Asistente Hospitalario<span></span>  </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+<div class="collapse navbar-collapse" id="navbarsExample05">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/">Inicio</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="pacientes">Paciente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="doctores">Personal</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="area">Area</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Medicamento">Farmacia</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Receta">Receta</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="#services.html">Servicios</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="#doctors.html">Doctores</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END header -->
+      
+      
+         <div class="container">
+      
+		  <h1>PACIENTES HOSPITALARIAS </h1> <hr>
+		<a class="btn btn-primary" th:href="@{/formPacientes}">Nuevo Paciente</a><br> <br>
+        <div class="row">
+          <div class="col-md-3"   th:each="paciente: ${pacientes}">
+            <div class="media d-block media-feature text-center mb-5 card"> <br>
+              <span class="icon flaticon-hospital"></span>
+              <div class="media-body">
+                <h3 class="mt-0 text-black" th:text="${paciente.dui}"></h3>
+                <p th:text="${paciente.nombre}">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p><a href="responsable" class="btn btn-primary btn-sm">Leer Mas</a></p>
+                  <p><a href="Receta" class="btn btn-primary btn-sm">Agregar Receta</a></p>
+              </div>
+            </div>
+          </div>
+      <!--  SECTION -->
+      
+      </div>
+</body>
+</html>

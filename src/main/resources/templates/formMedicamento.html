@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+      <header role="banner">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-5">
+                <ul class="social list-unstyled">
+                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="/l">Asistente Hospitalario<span></span>  </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+<div class="collapse navbar-collapse" id="navbarsExample05">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/">Inicio</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="pacientes">Paciente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="doctores">Personal</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="area">Area</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="Medicamento">Farmacia</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="Receta">Receta</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END header -->
+      
+      
+      <section class="home-slider owl-carousel">
+        <div class="slider-item" style="background-image: url('img/slider-2.jpg');">
+          
+          <div class="container">
+            <div class="row slider-text align-items-center">
+              <div class="col-md-7 col-sm-12 element-animate">
+                <h1>Bienvenido a Asistente Hospitalario</h1>
+                <p>Asistente Hospitalario es una plataforma virtual que tiene como objetivo principal brindarle a los pacientes de nuestro hospital una atencion rapida y eficiente.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="slider-item" style="background-image: url('img/slider-1.jpg');">
+          <div class="container">
+            <div class="row slider-text align-items-center">
+              <div class="col-md-7 col-sm-12 element-animate">
+                <h1>Permitenos brindarte la mejor asistencia medica</h1>
+                <p>Contamos con un personal altamente capacitado para la administracion de nuestro sistema.
+                  Asistente Hospitalario quiere brindarte tu mejor experiencia.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </section>
+      <!-- END slider -->
+      
+      
+<!-- CONTAINER -->
+<div class="container">
+	<form th:action="@{/formMedicamento}" th:object="${medicamento}" method="post" >
+		 <div class="form-group">
+	    	<label for="id">ID de el Medicamento</label>
+	    	<input type="text" class="form-control" id="id" placeholder="Nombre" th:field="*{id}"/>
+	    	<small th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="form-text text-danger"></small>
+	  	</div>
+		 <div class="form-group">
+	    	<label for="nombreMed">Nombre de el Medicamento</label>
+	    	<input type="text" class="form-control" id="nombreMed" placeholder="Nombre" th:field="*{nombreMed}"/>
+	    	<small th:if="${#fields.hasErrors('nombreMed')}" th:errors="*{nombreMed}" class="form-text text-danger"></small>
+	  	</div>
+		<div class="form-group">
+	    	<label for="existencias">Existencias</label>
+	    	<input type="text" class="form-control" id="existencias" placeholder="Existencias" th:field="*{existencias}"/>
+	    	<small th:if="${#fields.hasErrors('existencias')}" th:errors="*{existencias}" class="form-text text-danger"></small>
+	  	</div>
+	  	<div class="form-group">
+	    	<label for="fechaVencimiento">Fecha de Vencimiento</label>
+	    	<input type="text" class="form-control" id="fechaVencimiento" placeholder="Vencimiento" th:field="*{fechaVencimiento}"/>
+	    	<small th:if="${#fields.hasErrors('fechaVencimiento')}" th:errors="*{fechaVencimiento}" class="form-text text-danger"></small>
+	  	</div>
+	  	
+	  	<div class="form-group">
+	    	<label for="laboratorio">Laboratorio</label>
+	    	<input type="text" class="form-control" id="laboratorio" placeholder="laboratorio" th:field="*{laboratorio}"/>
+	    	<small th:if="${#fields.hasErrors('laboratorio')}" th:errors="*{laboratorio}" class="form-text text-danger"></small>
+	  	</div>
+	  		<div class="form-group">
+	    	<label for="lote">Lote</label>
+	    	<input type="text" class="form-control" id="lote" placeholder="lote" th:field="*{lote}"/>
+	    	<small th:if="${#fields.hasErrors('lote')}" th:errors="*{lote}" class="form-text text-danger"></small>
+	  	</div>
+	  	<div class="form-group">
+	    	<label for="estado">estado</label>
+	    	<input type="text" class="form-control" id="estado" placeholder="estado" th:field="*{estado}"/>
+	    	<small th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}" class="form-text text-danger"></small>
+	  	</div>
+		
+	  	
+	  	<input class="btn btn-primary" type="submit" value="guardar" />
+	  	<input type="hidden" id="id" th:field="*{id}">
+	</form>
+</div>
+<!-- END CONTAINER -->
+</body>
+</html>

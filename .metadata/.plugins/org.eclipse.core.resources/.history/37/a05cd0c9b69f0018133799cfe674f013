@@ -1,0 +1,27 @@
+package sv.com.jvides.models.entities;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="facturas")
+public class Invoice {
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "invoices_Seq")
+	@SequenceGenerator(name = "invoices_Seq", sequenceName = "INVOICES_SEQ")
+	private Long id;
+	
+	
+	private String description;
+	private Date createAt;
+	private Customer customer;
+	
+	
+	
+}

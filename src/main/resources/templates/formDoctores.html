@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+    
+<head th:replace="layouts/layout :: head"></head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+      <header role="banner">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-5">
+                <ul class="social list-unstyled">
+                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="/l">Asistente Hospitalario<span></span>  </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+<div class="collapse navbar-collapse" id="navbarsExample05">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/">Inicio</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="pacientes">Paciente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="doctores">Personal</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="area">Farmacia</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="services.html">Servicios</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="doctors.html">Doctores</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END header -->
+      
+            
+<div class="jumbotron text-center">
+  <h1>Agregar Doctores</h1> 
+  <p>Tu mejor opcion</p> 
+</div>
+      
+	
+
+<!-- CONTAINER -->
+<div class="container">
+<h1>Insertar doctores</h1>
+	<form th:action="@{/formDoctores}" th:object="${doctores}" method="post" >
+		 <div class="form-group">
+	    	<label for="NOM_DOCTOR">Nombre</label>
+	    	<input type="text" class="form-control" id="NOM_DOCTOR" placeholder="Nombre" th:field="*{NOM_DOCTOR}"/>
+	    	<small th:if="${#fields.hasErrors('NOM_DOCTOR')}" th:errors="*{NOM_DOCTOR}" class="form-text text-danger"></small>
+	  	</div>
+		<div class="form-group">
+	    	<label for="APE_DOCTOR">Apellido</label>
+	    	<input type="text" class="form-control" id="APE_DOCTOR" placeholder="Apellido" th:field="*{APE_DOCTOR}"/>
+	    	<small th:if="${#fields.hasErrors('APE_DOCTOR')}" th:errors="*{APE_DOCTOR}" class="form-text text-danger"></small>
+	  	</div>
+	  	<div class="form-group">
+	    	<label for="ESTADO">Estados</label>
+	    	<input type="text" class="form-control" id="ESTADO" placeholder="Estado" th:field="*{ESTADO}"/>
+	    	<small th:if="${#fields.hasErrors('ESTADO')}" th:errors="*{ESTADO}" class="form-text text-danger"></small>
+	  	</div>
+	  	<select name="ID_TURNO">
+	  			<option value="1">Turno: 7:00 am - 3:00 pm</option>
+	  			<option value="2">Turno: 3:00 pm - 11:00 pm</option>
+	  			<option value="3">Turno: 3:00 pm - 6:00 am</option>
+	  	</select>
+	  	
+		
+
+	  	<input class="btn btn-primary" type="submit" value="guardar" />
+	  	<input type="hidden" id="id" th:field="*{id}">
+	</form>
+</div>
+<!-- END CONTAINER -->
+</body>
+</html>

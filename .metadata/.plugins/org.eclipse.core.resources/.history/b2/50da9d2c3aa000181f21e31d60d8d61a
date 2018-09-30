@@ -1,0 +1,5 @@
+package sv.com.jvides.models.services;
+
+public interface IInvoiceService {
+
+}

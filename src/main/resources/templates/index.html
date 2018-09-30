@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Asistente Hospitalario</title>
+    
+<head th:replace="layouts/layout :: head"></head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    
+      <header role="banner">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-5">
+                <ul class="social list-unstyled">
+                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="/l">Asistente Hospitalario<span></span>  </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+<div class="collapse navbar-collapse" id="navbarsExample05">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/">Inicio</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="pacientes">Paciente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="doctores">Personal</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="area">Area</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="Medicamento">Farmacia</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="#doctors.html">Doctores</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END header -->
+      
+      <section class="home-slider owl-carousel">
+        <div class="slider-item" style="background-image: url('img/slider-2.jpg');">
+          
+          <div class="container">
+            <div class="row slider-text align-items-center">
+              <div class="col-md-7 col-sm-12 element-animate">
+                <h1>Bienvenido a Asistente Hospitalario</h1>
+                <p>Asistente Hospitalario es una plataforma virtual que tiene como objetivo principal brindarle a los pacientes de nuestro hospital una atencion rapida y eficiente.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="slider-item" style="background-image: url('img/slider-1.jpg');">
+          <div class="container">
+            <div class="row slider-text align-items-center">
+              <div class="col-md-7 col-sm-12 element-animate">
+                <h1>Permitenos brindarte la mejor asistencia medica</h1>
+                <p>Contamos con un personal altamente capacitado para la administracion de nuestro sistema.
+                  Asistente Hospitalario quiere brindarte tu mejor experiencia.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </section>
+      <!-- END slider -->
+
+      
+      <section class="container home-feature mb-5">
+        <div class="row">
+          <div class="col-md-4 p-0 one-col element-animate">
+            <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
+              <span class="icon flaticon-hospital-bed"></span>
+              <h2>Pacientes</h2>
+              <p>Verifica la lista de pacientes actualmente activos en la unidad hospitalaria.</p>
+            </div>
+           
+          </div>
+          <div class="col-md-4 p-0 two-col element-animate">
+            <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
+              <span class="icon flaticon-first-aid-kit"></span>
+              <h2>Doctores</h2>
+              <p>Conoce el personal a cargo .</p>
+            </div>
+           
+          </div>
+          <div class="col-md-4 p-0 three-col element-animate">
+            <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
+              <span class="icon flaticon-hospital"></span>
+              <h2>Areas</h2>
+              <p>Descrubre mas sobre nuestras areas</p>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      <section>
+       <div>
+                <div class="media d-block media-custom text-center">
+                  <img src="img/doctor_4.jpg" alt="Image Placeholder" class="img-fluid">
+                  <div class="media-body">
+                    <h3 class="mt-0 text-black">Dr. Jessica Doe</h3>
+                    <p><a class="btn btn-primary" th:href="@{/ingresos}">Ingresos</a>  <hr></p>
+                    <p>
+                      <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                    </p>
+                  </div>
+                </div></section>
+      <!-- END section -->
+
+     
+      <!-- END section -->
+<<!-- 
+      <section class="section bg-light">
+        <div class="container">
+          <div class="row justify-content-center mb-5 element-animate">
+            <div class="col-md-8 text-center mb-5">
+              <h2 class="text-uppercase heading border-bottom mb-4">Nuestros Doctores</h2>
+              <p class="mb-0 lead">Nuestra Institucion cuenta con los mejores medicos, tanto nacionales
+              como internaciones. Un personal altamente capacitado para brindarte la mejor atencion.</p>
+            </div>
+          </div>
+          <div class="row element-animate">
+            <div class="major-caousel js-carousel-1 owl-carousel">
+              <div>
+                <div class="media d-block media-custom text-center">
+                  <img src="img/doctor_1.jpg" alt="Image Placeholder" class="img-fluid">
+                  <div class="media-body">
+                    <h3 class="mt-0 text-black">Dr. Carl Smith</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                      <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="media d-block media-custom text-center">
+                  <img src="img/doctor_2.jpg" alt="Image Placeholder" class="img-fluid">
+                  <div class="media-body">
+                    <h3 class="mt-0 text-black">Dr. Janice Doe</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                      <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="media d-block media-custom text-center">
+                  <img src="img/doctor_3.jpg" alt="Image Placeholder" class="img-fluid">
+                  <div class="media-body">
+                    <h3 class="mt-0 text-black">Dr. Jean Doe</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                      <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="media d-block media-custom text-center">
+                  <img src="img/doctor_4.jpg" alt="Image Placeholder" class="img-fluid">
+                  <div class="media-body">
+                    <h3 class="mt-0 text-black">Dr. Jessica Doe</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                      <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="media d-block media-custom text-center">
+                  <img src="img/doctor_1.jpg" alt="Image Placeholder" class="img-fluid">
+                  <div class="media-body">
+                    <h3 class="mt-0 text-black">Dr. Carl Smith</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                      <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="media d-block media-custom text-center">
+                  <img src="img/doctor_2.jpg" alt="Image Placeholder" class="img-fluid">
+                  <div class="media-body">
+                    <h3 class="mt-0 text-black">Dr. Janice Doe</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                      <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="media d-block media-custom text-center">
+                  <img src="img/doctor_3.jpg" alt="Image Placeholder" class="img-fluid">
+                  <div class="media-body">
+                    <h3 class="mt-0 text-black">Dr. Jean Doe</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                      <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="media d-block media-custom text-center">
+                  <img src="img/doctor_4.jpg" alt="Image Placeholder" class="img-fluid">
+                  <div class="media-body">
+                    <h3 class="mt-0 text-black">Dr. Jessica Doe</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                      <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                      <a href="#" class="p-2"><span class="fa fa-linkedin"></span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- END slider -->
+          </div>
+        </div>
+      </section>
+      <!-- END section -->
+
+     
+      
+     <!--  footer -->
+      <footer class="site-footer" role="contentinfo">
+        <div class="container">
+        
+            <div class="col-md-6 col-sm-12 copyright">
+              <p>&copy; 2018 Asistete Medico by YJLCorporation</p>
+            </div>
+            <div class="col-md-6 col-sm-12 text-md-right text-sm-left">
+              <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+              <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+              <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+            </div>
+          </div>
+      
+      </footer>
+    <!-- END footer -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

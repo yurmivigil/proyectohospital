@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${titulo}">Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+</head>
+<body>
+<div class="container">
+	<table class="table">
+		 <thead>
+		  <tr>
+		     <th scope="col">id</th>
+		     <th scope="col">Nombre</th>
+		     <th scope="col">Apellido</th>
+		     <th scope="col">Correo</th>
+		     <th scope="col">Fecha</th>
+		  </tr>
+		 </thead>
+		 <!--tfoot>
+		  <tr>
+		     <td>Sum</td>
+		     <td>$180</td>
+		  </tr>
+		 </tfoot-->
+		 <tbody>
+		  <tr th:each="area: area">
+		     <td th:text="${area.ID_AREA}"/>
+		     <td th:text="${area.DES_AREA}" />
+		     <td th:text="${area.ESTADO}" />
+		     <td th:text="${area.NOM_AREA}" />
+		     <td th:text="${area.createAt}" />
+		     <td> <a th:href="@{/form/} + ${area.ID_AREA}" th:text="'Editar'" class="btn btn-primary btn-xs" ></a></td>
+		     <td> <a th:href="@{/eliminar/} + ${area.ID_AREA}" th:text="'Eliminar'" class="btn btn-danger btn-xs" onclick="return confirm('Estas seguro?')" ></a></td>
+		  </tr>
+		 </tbody>
+		</table>
+</div>
+</body>
+</html>

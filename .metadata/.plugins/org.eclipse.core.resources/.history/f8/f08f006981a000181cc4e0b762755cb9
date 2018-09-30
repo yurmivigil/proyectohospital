@@ -1,0 +1,13 @@
+package sv.com.jvides.models.dao;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import sv.com.jvides.models.entities.Customer;
+import sv.com.jvides.models.entities.Invoice;
+
+public interface IInvoiceDao extends CrudRepository<Invoice, Long> {
+	
+	@Query("select u from Invoice u left join Customer c on where u.customerId = c.id AND u.customerId = ?1")
+	public Customer findByCustomer(Long id);	
+}

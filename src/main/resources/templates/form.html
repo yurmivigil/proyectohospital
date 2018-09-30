@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${titulo}">Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listar">Pacientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=doctores>Doctores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="form">Habitaciones</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="jumbotron text-center">
+  <h1>Asistente hospitalario</h1> 
+  <p>Tu mejor opcion</p> 
+</div>
+<div class="container">
+<form th:action="@{/form}" th:object="${customer}" method="post" >
+	<div class="form-group">
+    	<label for="firstName">Nombre</label>
+    	<input type="text" class="form-control" id="firstName" placeholder="Nombre" th:field="*{firstName}"/>
+    	<small th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="form-text text-danger"></small>
+  	</div>
+	<div class="form-group">
+    	<label for="lastName">Apellido</label>
+    	<input type="text" class="form-control" id="lastName" placeholder="Apellido" th:field="*{lastName}"/>
+    	<small th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="form-text text-danger"></small>
+  	</div>
+	<div class="form-group">
+    	<label for="email">Correo Electronico</label>
+    	<input type="text" class="form-control" id="email" placeholder="Correo" th:field="*{email}"/>
+    	<small th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="form-text text-danger"></small>
+  	</div>
+  	<div class="form-group">
+    	<label for="createAt">Fecha</label>
+    	<input type="text" class="form-control" id="createAt" placeholder="Fecha" th:field="*{createAt}"/>
+    	<small th:if="${#fields.hasErrors('createAt')}" th:errors="*{createAt}" class="form-text text-danger"></small>
+  	</div>
+  	
+  	
+  	<input type="submit" value="Crear cliente" />
+	<input type="hidden" id="id" th:field="*{id}">
+</form>
+</div>
+</body>
+</html>

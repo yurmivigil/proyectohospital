@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingresos Hospitalarios</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>    
+      <header role="banner">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-5">
+                <ul class="social list-unstyled">
+                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="/l">Asistente Hospitalario<span></span>  </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+<div class="collapse navbar-collapse" id="navbarsExample05">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/">Inicio</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="pacientes">Paciente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="doctores">Personal</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="area">Area</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="Medicamento">Farmacia</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="Recetas">Recetas</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END header -->
+      
+      	<!-- CONTAINER -->
+		<div class="container">
+		<h1>Ingresos</h1><hr>
+			<form th:action="@{/formIngresos}" th:object="${ingresos}" method="post" >
+			
+			
+	<div class="form-group blu-margin">
+	
+ 	<!-- <label for="name">Cliente</label>
+    <select class="form-control" th:field="${ingresos.pacientes.dui}"  id="pacientesId">
+    <!--option value="0" th:text="select operator" ></option> 
+    <option th:each="pacientes : ${pacientes}" th:value="${pacientes.dui}" th:text="${pacientes.nombre} + ' ' + ${pacientes.apellido}"></option>
+    </select>- -->
+    
+    <div class="form-group">
+		  <label for="sel1">Selecciona Paciente:</label>
+		 	 <select class="form-control" id="sel1" name="ID_PACIENTE">
+		    	<option  th:each="pacientes : ${pacientes}" th:value="${pacientes.dui}" th:text="${pacientes.nombre} + ' ' + ${pacientes.apellido}"></option>
+		 	</select>
+	</div>
+	   <div class="form-group">
+		  <label for="sel1">Selecciona Doctores:</label>
+		 	 <select class="form-control" id="sel2" name="ID_DOCTOR">
+		    	<option  th:each="doctores : ${doctores}" th:value="${doctores.id}" th:text="${doctores.NOM_DOCTOR} + ' ' + ${doctores.APE_DOCTOR}"></option>
+		 	</select>
+	</div>	   
+	<div class="form-group">
+		  <label for="sel1">Selecciona Area de Hospitalacion:</label>
+		 	 <select class="form-control" id="sel2" name="ID_AREA">
+		    	<option  th:each="area : ${area}" th:value="${area.id}" th:text="${area.NOM_AREA}"></option>
+		 	</select>
+	</div>
+
+			  	<div class="form-group">
+				  <label for="sel1" >Alta del paciente:</label>
+				  <select class="form-control" id="sel1" name="ALTA">
+				    <option value="1">Nuevo Ingreso</option>
+				    <option value="2">Alta</option>
+				  </select>
+				</div>
+				
+			  	
+			  	<input class="btn btn-primary" type="submit" value="guardar" />
+			  	<input type="hidden" id="id" th:field="*{id}">
+			</form>
+		</div>
+		<!-- END CONTAINER -->
+
+</body>
+</html>

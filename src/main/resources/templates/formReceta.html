@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${titulo}">Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+</head>
+<body>
+    
+      <header role="banner">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-5">
+                <ul class="social list-unstyled">
+                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="/l">Asistente Hospitalario<span></span>  </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+<div class="collapse navbar-collapse" id="navbarsExample05">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/">Inicio</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="pacientes">Paciente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="doctores">Personal</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="area">Farmacia</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="services.html">Servicios</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="Recetas">Recetas</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END header -->
+<div class="container">
+<form th:action="@{/formReceta}" th:object="${Receta}" method="post" >
+	<div class="form-group">
+    	<label for="idReceta">Id Receta</label>
+    	<input type="text" class="form-control" id="idReceta" placeholder="Id Receta" th:field="*{idReceta}"/>
+    	<small th:if="${#fields.hasErrors('idReceta')}" th:errors="*{idReceta}" class="form-text text-danger"></small>
+  	</div>
+  	
+	<div class="form-group">
+    	<label for="descripcion">Descripcion</label>
+    	<input type="text" class="form-control" id="descripcion" placeholder="descripcion" th:field="*{descripcion}"/>
+    	<small th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" class="form-text text-danger"></small>
+  	</div>
+	
+  	<div class="form-group">
+    	<label for="doctorxingreso">Doctor Por Ingreso</label>
+    	<input type="text" class="form-control" id="doctorxingreso" placeholder="Doctor Por Ingreso" th:field="*{doctorxingreso}"/>
+    	<small th:if="${#fields.hasErrors('doctorxingreso')}" th:errors="*{doctorxingreso}" class="form-text text-danger"></small>
+  	</div>
+  	<div class="form-group">
+    	<label for="dui">DUI</label>
+    	<input type="text" class="form-control" id="dui" placeholder="Dui" th:field="*{dui}"/>
+    	<small th:if="${#fields.hasErrors('dui')}" th:errors="*{dui}" class="form-text text-danger"></small>
+  	</div>
+  	
+  	
+  	<div class="form-group">
+    	<select class="form-control" name="medicamento">
+ 			 <option value="1">Panadol</option>
+  			<option value="102">Acetaminofen</option>
+  			<option value="103">Novalgina</option>
+  			
+ 			
+	</select>	
+ 
+
+
+  	</div>
+  	
+  	
+  	<input type="submit" value="Crear Receta" />
+	<input type="hidden" id="idReceta" th:field="*{idReceta}">
+</form>
+</div>
+</body>
+</html>

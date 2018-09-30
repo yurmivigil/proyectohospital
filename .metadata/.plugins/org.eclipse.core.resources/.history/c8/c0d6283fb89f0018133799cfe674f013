@@ -1,0 +1,5 @@
+package sv.com.jvides.models.entities;
+
+public class InvoiceDetail {
+
+}

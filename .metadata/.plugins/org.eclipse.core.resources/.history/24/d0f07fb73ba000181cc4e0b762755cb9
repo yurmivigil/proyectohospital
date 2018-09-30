@@ -1,0 +1,20 @@
+package sv.com.jvides.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+@Controller
+@SessionAttributes("invoice")
+public class InvoiceController {
+	
+	@RequestMapping(value="/listar", method=RequestMethod.GET)
+	public String listar(Model model) {
+		model.addAttribute("titulo","listado de cliente");
+		model.addAttribute("customers", customerService.findAll());
+		return "listar";
+	}
+
+}

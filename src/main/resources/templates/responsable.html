@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+<link rel="stylesheet" th:href="@{/css/animate.css}" />
+<link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrap-datepicker.css}" />
+<link rel="stylesheet" th:href="@{/css/jquery.timepicker.css}" />
+<link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>    
+      <header role="banner">
+        <div class="top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-5">
+                <ul class="social list-unstyled">
+                  <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="/l">Asistente Hospitalario<span></span>  </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+<div class="collapse navbar-collapse" id="navbarsExample05">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/">Inicio</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="pacientes">Paciente</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="doctores">Personal</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="area">Area</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="Medicamento">Farmacia</a>
+                </li>
+                 <li class="nav-item">
+                  <a class="nav-link" href="#doctors.html">Doctores</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- END header -->
+      
+  
+  <div class="form-group blu-margin">
+	
+ 	<label for="name">Cliente</label>
+	    <select class="form-control" th:field="${pacientes.responsable.dui_responsable}"  id="pacientesId">
+		    <!--option value="0" th:text="select operator" ></option> -->
+		    <option th:each="responsable : ${responsable}" th:value="${responsable.dui_responsable}" th:text="${responsable.nombre_responsable}"></option>
+	    </select>
+	</div>
+<h1>Responsable</h1>
+
+</body>
+</html>
